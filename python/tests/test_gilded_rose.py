@@ -5,6 +5,15 @@ from gilded_rose import Item, GildedRose
 
 
 class GildedRoseTest(unittest.TestCase):
+    def test_item_access(self):
+        # Items have a name, a sell-in value, and a quality value
+        # This just gets us 100% test coverage on the Item class :)
+        item = Item("Potion", 5, 5)
+        self.assertEqual(item.name, "Potion")
+        self.assertEqual(item.sell_in, 5)
+        self.assertEqual(item.quality, 5)
+        print(item.__repr__())
+
     def test_normal_item(self):
         # At the end of the day, our system lowers both values for every item
         items = [Item("Potion", 5, 5)]
